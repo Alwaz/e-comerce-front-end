@@ -1,0 +1,258 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
+
+:root {
+  --black: #2c2c54;
+  --orange: #ff9f1a;
+}
+
+/* CSS reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  font-family: "Nunito", sans-serif;
+  text-transform: capitalize;
+  list-style: none;
+  border: none;
+  text-decoration: none;
+  /* animation */
+  transition: all 0.2s linear;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: -6rem;
+}
+
+/* Header stling */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  padding: 2rem 9%;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background-color: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+  font-size: 2.5rem;
+  color: var(--black);
+  font-weight: 700;
+}
+
+section {
+  padding: 2rem 9%;
+}
+
+header .navbar a {
+  font-size: 1.7rem;
+  color: var(--black);
+  margin: 0 1rem;
+}
+
+header .icons a {
+  font-size: 2.5rem;
+  color: var(--black);
+  margin-left: 1.5rem;
+}
+
+#menu-bar {
+  font-size: 2.5rem;
+  border: 0.1rem solid var(--black);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  /* display: none; */
+  padding: 0.5rem 1.5rem;
+}
+
+header .navbar a:hover,
+header .icons a:hover {
+  color: var(--orange);
+}
+
+/* general CSS */
+.heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: var(--black);
+  padding: 1rem;
+}
+
+.heading span {
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  border: 0.2 solid --black;
+  font-weight: bolder;
+  font-size: 1.7rem;
+  color: var(--black);
+  background: white;
+  padding: 0.8rem 3rem;
+}
+
+.btn:hover {
+  background: var(--orange);
+  color: #fff;
+  border: 0.2rem solid var(--orange);
+}
+
+/* Home section stling */
+.home .slide_content .slide {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 0 9%;
+  padding-top: 9rem;
+  background: url(./images/home-bg-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.home .slide_content .slide .content {
+  flex: 1 1 40rem;
+  animation: slideContet 0.5s linear 1s backwards;
+}
+
+@keyframes slideContent {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+}
+
+.home .slide_content .slide .image {
+  flex: 1 1 50rem;
+  padding-bottom: 15rem;
+  position: relative;
+  z-index: 0;
+}
+
+.home .slide_content .slide .image .shoe {
+  width: 100%;
+  transform: rotate(-35deg);
+  animation: shoe 0.3s linear;
+}
+
+@keyframes shoe {
+  0% {
+    transform: rotate(0deg) scale(0.5);
+  }
+}
+
+.home .slide_content .slide .image .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  animation: shoeText;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: backwards;
+  transform: rotate(-35deg);
+}
+
+.home .slide_content .slide .content p {
+  font-size: 1.7rem;
+  color: var(--black);
+  padding: 0.5rem 0;
+}
+
+.home .slide_content .slide .content span {
+  font-size: 2rem;
+  color: var(--orange);
+}
+
+.service .slide_container .slide .content h3 {
+  font-size: 5rem;
+  color: var(--orange);
+}
+
+@keyframes shoeText {
+  0% {
+    opacity: 0;
+    top: -10rem;
+  }
+}
+
+/* Service section stling */
+.service .box_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  background: #f9f9f9;
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+.service .box_container .box {
+  text-align: center;
+  flex: 1 1 30rem;
+  background: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border: 0.1rem solid var(--black);
+}
+
+.service .box_container .box .content h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+}
+
+.service .box_container .box .icons h3 {
+}
+
+/* product section stling */
+.products .box_container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* media querired */
+@media (max-width: 400px) {
+  html {
+    font-size: 50%;
+  }
+
+  .home .slide_content .slide .image {
+    padding-bottom: 6rem;
+  }
+
+  .heading {
+    font-size: 3rem;
+  }
+
+  section {
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-bar {
+    display: block;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: 0;
+  }
+}
