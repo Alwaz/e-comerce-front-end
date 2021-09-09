@@ -28,6 +28,36 @@ html {
   scroll-padding-top: -6rem;
 }
 
+/* general CSS */
+section {
+  padding: 2rem 9%;
+}
+
+.heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 4rem;
+  color: var(--black);
+  padding: 1rem;
+}
+
+.heading span {
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  border: 0.2 solid --black;
+  font-weight: bolder;
+  font-size: 1.7rem;
+  color: var(--black);
+  background: white;
+  padding: 0.8rem 3rem;
+}
+
 /* Header stling */
 header {
   position: fixed;
@@ -47,10 +77,6 @@ header .logo {
   font-size: 2.5rem;
   color: var(--black);
   font-weight: 700;
-}
-
-section {
-  padding: 2rem 9%;
 }
 
 header .navbar a {
@@ -77,31 +103,6 @@ header .icons a {
 header .navbar a:hover,
 header .icons a:hover {
   color: var(--orange);
-}
-
-/* general CSS */
-.heading {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: var(--black);
-  padding: 1rem;
-}
-
-.heading span {
-  text-transform: uppercase;
-  color: var(--orange);
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 1rem;
-  border-radius: 0.5rem;
-  border: 0.2 solid --black;
-  font-weight: bolder;
-  font-size: 1.7rem;
-  color: var(--black);
-  background: white;
-  padding: 0.8rem 3rem;
 }
 
 .btn:hover {
@@ -147,7 +148,7 @@ header .icons a:hover {
 .home .slide_content .slide .image .shoe {
   width: 100%;
   transform: rotate(-35deg);
-  animation: shoe 0.3s linear;
+  animation: shoe 0.5s linear;
 }
 
 @keyframes shoe {
@@ -166,7 +167,6 @@ header .icons a:hover {
   animation-delay: 0.5s;
   animation-timing-function: linear;
   animation-fill-mode: backwards;
-  transform: rotate(-35deg);
 }
 
 .home .slide_content .slide .content p {
@@ -180,7 +180,8 @@ header .icons a:hover {
   color: var(--orange);
 }
 
-.service .slide_container .slide .content h3 {
+/* Services section stling */
+.home .slide_container .slide .content h3 {
   font-size: 5rem;
   color: var(--orange);
 }
@@ -206,19 +207,23 @@ header .icons a:hover {
 .service .box_container .box {
   text-align: center;
   flex: 1 1 30rem;
-  background: #f9f9f9;
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-  border: 0.1rem solid var(--black);
 }
 
-.service .box_container .box .content h3 {
+.service .box_container .box i {
+  font-size: 4rem;
+  color: var(--orange);
+}
+
+.service .box_container .box h3 {
   color: var(--black);
-  font-size: 2.5rem;
+  font-size: 2rem;
+  padding-top: 1rem;
 }
 
-.service .box_container .box .icons h3 {
+.service .box_container .box p {
+  font-size: 1.5rem;
+  color: #666;
+  padding: 1rem 0;
 }
 
 /* product section stling */
@@ -226,6 +231,87 @@ header .icons a:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
+  justify-content: center;
+}
+
+.products .box_container .box {
+  border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: #f9f9f9;
+  flex: 1 1 30rem;
+}
+
+.products .box_container .box .content {
+  padding: 1.5rem;
+}
+
+.products .box_container .box img {
+  height: 10rem;
+  transform: rotate(-35deg);
+  margin: 8rem 2rem;
+}
+
+.products .box_container .box:hover img {
+  transform: rotate(-35deg) scale(-35deg);
+}
+
+.products .box_container .box .icons {
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  top: 0.5rem;
+  left: -10rem;
+}
+
+.products .box_container .box:hover .icons {
+  left: 1rem;
+}
+
+.products .box_container .box .icons a {
+  height: 4.5rem;
+  width: 5rem;
+  line-height: 4.5rem;
+  font-size: 2rem;
+  color: var(--black);
+  border: 0.1rem solid var(--black);
+  border-radius: 0.5rem;
+  background: #fff;
+  margin-top: 0.5rem;
+}
+
+.products .box_container .box .icons a:hover {
+  background: var(--orange);
+  color: #fff;
+}
+
+.products .box_container .box .content h3 {
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.products .box_container .box .content .price {
+  font-size: 2.5rem;
+  font-weight: bolder;
+  padding: 1rem 0rem;
+  color: var(--black);
+}
+
+.products .box_container .box .content .price span {
+  color: var(--orange);
+  font-size: 1.5rem;
+  text-decoration: line-through;
+}
+
+.products .box_container .box .content .stars {
+  padding-bottom: 1rem;
+}
+
+.products .box_container .box .content .stars i {
+  font-size: 1.7rem;
+  color: var(--orange);
 }
 
 /* media querired */
@@ -234,15 +320,16 @@ header .icons a:hover {
     font-size: 50%;
   }
 
-  .home .slide_content .slide .image {
-    padding-bottom: 6rem;
+  .home .slide_content .slide .image .text {
+    width: 60%;
   }
 
   .heading {
     font-size: 3rem;
   }
 
-  section {
+  .home .slide_content .slide .image {
+    padding-bottom: 6rem;
   }
 }
 
@@ -253,6 +340,10 @@ header .icons a:hover {
 
   header .navbar {
     position: absolute;
-    top: 0;
+    top: 100%;
+    left: 120%;
+    width: 100%;
+    background: #eee;
+    border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
   }
 }
