@@ -316,9 +316,12 @@ header .icons a:hover {
 
 /* Featured product section */
 .featured .row {
-  display: flex;
-  flex-wrap: wrap;
   gap: 1.5rem;
+  display: flex;
+  overflow: hidden;
+
+  justify-content: center;
+  align-items: center;
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
   border-radius: 0.5rem;
   padding: 2rem;
@@ -328,7 +331,7 @@ header .icons a:hover {
 
 /* flex grow, shrink, flex=basis */
 .featured .row .content {
-  flex: 1 1 40rem;
+  flex: 1 1 190rem;
 }
 
 .featured .row .image_container .small_image {
@@ -354,13 +357,51 @@ header .icons a:hover {
 .featured .row .image_container .big_image {
   width: 80%;
   padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.featured .row .image_container .big_image img {
+  width: 100%;
+}
+
+.featured .row .image_container .big_image img:hover {
+  transform: scale(1.05);
+}
+
+.featured .row .content h3 {
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.featured .row .content p {
+  font-size: 1.5rem;
+  color: var(--black);
+  padding: 1rem 0;
+}
+
+.featured .row .content .stars i {
+  font-size: 1.7rem;
+  color: var(--orange);
+  padding: 0.5rem 0;
+}
+
+.featured .row .content .price {
+  font-size: 2.5rem;
+  color: var(--black);
+  font-weight: bolder;
+}
+
+.featured .row .content .price span {
+  text-decoration: line-through;
+  color: var(--orange);
+  font-size: 1.5rem;
 }
 
 /* review section */
-
 .review .box_container {
   display: flex;
-  flex-wrap: wrap;
   gap: 1.5rem;
 }
 
@@ -378,8 +419,25 @@ header .icons a:hover {
   text-align: center;
   border: rgba(0, 0, 0, 0.1);
   background: #f9f9f9;
-  border-radius: 0.5rem;
+  border-radius: 50%;
   padding: 2rem;
+}
+
+.review .box_container .box h3 {
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.review .box_container .box p {
+  font-size: 1.5rem;
+  color: var(--black);
+  padding: 1rem 0;
+}
+
+.review .box_container .box .stars i {
+  font-size: 1.7rem;
+  color: var(--orange);
+  padding: 0.5rem 0;
 }
 
 /* News letter secrion  */
@@ -439,11 +497,27 @@ footer > .box_container .box a {
   .home .slide_content .slide .image {
     padding-bottom: 6rem;
   }
+
+  .featured .row {
+    flex-wrap: wrap;
+  }
+
+  .review .box_container {
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 768px) {
   #menu-bar {
     display: block;
+  }
+
+  .featured .row {
+    flex-wrap: wrap;
+  }
+
+  .home .slide_content {
+    padding-top: 2rem;
   }
 
   header .navbar .active {
