@@ -454,28 +454,62 @@ header .icons a:hover {
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
 }
 
+.newsletter .content h3 {
+  font-size: 2.5rem;
+  color: var(--black);
+}
+
+.newsletter .content p {
+  font-size: 1.5rem;
+  color: #666;
+  margin: 1rem auto;
+  max-width: 80rem;
+}
+
+.newsletter .content form {
+  margin: 1rem auto;
+  max-width: 50rem;
+  display: flex;
+}
+
 .newsletter .content form .box {
   width: 100%;
   font-size: 1.7rem;
   text-transform: none;
   color: #333;
   padding: 1rem;
+  border: 0.2rem solid rgba(0, 0, 0, 0.1);
+  border-right: none;
+  margin-top: 1rem;
 }
 
 /* footer stling */
 
-footer > .box_container {
+.footer > .box_container {
   border-radius: 0.5rem;
   border: 0.1rem solid rgba(0, 0, 0, 0.1);
   background: #f9f9f9;
   padding: 2rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 1.5rem;
 }
 
-footer > .box_container .box a {
+.footer > .box_container .box {
+  flex: 1 1 20rem;
+}
+
+.footer > .box_container .box h3 {
+  color: var(--black);
+  font-size: 2.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.footer > .box_container .box a {
   font-size: 1.5rem;
+  color: #666;
   padding-bottom: 1.5rem;
   display: block;
 }
