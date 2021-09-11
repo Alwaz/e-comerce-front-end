@@ -96,7 +96,7 @@ header .icons a {
   border: 0.1rem solid var(--black);
   border-radius: 0.3rem;
   cursor: pointer;
-  /* display: none; */
+  display: none;
   padding: 0.5rem 1.5rem;
 }
 
@@ -539,6 +539,10 @@ header .icons a:hover {
   .review .box_container {
     flex-wrap: wrap;
   }
+
+  .review .box_container .box p {
+    text-align: justify;
+  }
 }
 
 @media (max-width: 768px) {
@@ -554,23 +558,30 @@ header .icons a:hover {
     padding-top: 2rem;
   }
 
-  header .navbar .active {
-    left: 0;
+  .review .box_container .box p {
+    text-align: justify;
   }
 
   header .navbar a {
     font-size: 2rem;
     background: #fff;
+    border: 0.1rem solid rgba(0, 0, 0, 0.1);
     border-radius: 1.5rem;
-    border: rgba(0, 0, 0, 0.1);
+    margin: 1.5rem;
+    display: block;
+    text-align: center;
   }
 
   header .navbar {
     position: absolute;
     top: 100%;
-    left: 120%;
+    left: -120%;
     width: 100%;
     background: #eee;
     border-top: 0.1rem solid rgba(0, 0, 0, 0.1);
+  }
+
+  header .navbar.active {
+    left: 0;
   }
 }
